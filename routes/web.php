@@ -19,5 +19,6 @@ Route::get('/', function () {
 
 Route::get('/view_data', 'DataCovidController@index');
 Route::get('/view_berita', 'BeritaController@index');
+Route::get('/view_berita_detail/{id_berita}', 'BeritaController@detail');
 Route::get('/view_rs', 'RumahSakitController@index');
 Route::get('/view_tentang', 'TentangController@index');

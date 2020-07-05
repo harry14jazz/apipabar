@@ -13,10 +13,23 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
+//login
+Route::get('/','AuthController@getlogin')->middleware('guest')->name('home');
+Route::post('/login','AuthController@postlogin')->middleware('guest')->name('login');
+
+//logout
+Route::get('/logout','AuthController@logout')->middleware('auth')->name('logout');
+
+//dashboard
+Route::get('/admin', function () {
+	return view('dashboard');
+})->middleware('auth')->name('home admin');
+
+//API
 Route::get('/view_data', 'DataCovidController@index');
 Route::get('/view_berita', 'BeritaController@index');
 Route::get('/view_berita_detail/{id_berita}', 'BeritaController@detail');

@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="{!! asset('../images/logo/covid.jpg') !!}">
+    <link rel="icon" href="{!! asset('../img/logo/covid.jpg') !!}">
 
     <title>Login</title>
 
@@ -24,7 +24,7 @@
   <form class="form-signin" method="POST" action="{{ route('login') }}">
     {{ csrf_field() }}
 
-    <img class="mb-4" src="{!! asset('../images/logo/covid.jpg') !!}" alt="" width="200" height="120">
+    <img class="mb-4" src="{!! asset('../img/logo/covid.jpg') !!}" alt="" width="200" height="120">
 
     <h1 class="h3 mb-3 font-weight-normal">{{ config('app.name') }}</h1>
 

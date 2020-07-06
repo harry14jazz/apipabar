@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="{!! asset('../images/logo/covid.jpg') !!}">
+    <link rel="icon" href="{!! asset('../img/logo/covid.jpg') !!}">
 
     <title>Admin</title>
 
@@ -16,6 +16,10 @@
 
     <!-- Custom styles for this template -->
     <link href="{!! asset('../css/dashboard.css') !!}" rel="stylesheet">
+
+    <!-- DataTables -->
+    <link rel="stylesheet" href="{!! asset('../plugins/datatables-bs4/css/dataTables.bootstrap4.min.css') !!}">
+    <link rel="stylesheet" href="{!! asset('../plugins/datatables-responsive/css/responsive.bootstrap4.min.css') !!}">
   </head>
 
   <body>

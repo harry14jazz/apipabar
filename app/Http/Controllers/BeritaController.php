@@ -16,4 +16,9 @@ class BeritaController extends Controller
         $data = Berita::find($id_berita);
         return $data;
     }
+
+    public function listBerita(){
+        $data = Berita::orderBy('id','DESC')->get();
+        return view('listBerita',['data' => $data]);
+    }
 }

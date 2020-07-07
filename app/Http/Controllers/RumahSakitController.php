@@ -11,4 +11,9 @@ class RumahSakitController extends Controller
         $data = RumahSakit::all();
         return $data;
     }
+
+    public function listRS(){
+        $data = RumahSakit::all();
+        return view('listRS',['data' => $data]);
+    }
 }

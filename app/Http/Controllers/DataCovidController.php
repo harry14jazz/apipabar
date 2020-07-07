@@ -11,4 +11,9 @@ class DataCovidController extends Controller
         $data = DataCovid::all();
         return $data;
     }
+
+    public function listDataCovid(){
+        $data = DataCovid::all();
+        return view('listDataCovid',['data' => $data]);
+    }
 }

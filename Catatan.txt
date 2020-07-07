@@ -1,0 +1,6 @@
+Dashboard
+Tambah Required
+Tambah Placeholder
+Tampilkan Logic Edit
+Tambahkan Logic Tambah
+Tambahkan Logic Hapus

@@ -16,4 +16,9 @@ class TentangController extends Controller
         $data = Tentang::all();
         return view('listTentang',['data' => $data]);
     }
+
+    public function editTentang($id){
+        $data = Tentang::find($id);
+        return view('edit/edit_tentang',['data' => $data]);
+    }
 }

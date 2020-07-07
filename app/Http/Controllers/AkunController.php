@@ -11,4 +11,9 @@ class AkunController extends Controller
         $data = User::all();
         return view('profileUser',['data' => $data]);
     }
+
+    public function editAkun($id){
+        $data = User::find($id);
+        return view('edit/edit_User',['data' => $data]);
+    }
 }

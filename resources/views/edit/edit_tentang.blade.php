@@ -30,13 +30,13 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="{{ route ('tentang_kami') }}">
+                <a class="nav-link active" href="{{ route ('tentang_kami') }}">
                   <span data-feather="alert-circle"></span>
                   Tentang Kami
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link active" href="{{ route ('akun') }}">
+                <a class="nav-link" href="{{ route ('akun') }}">
                   <span data-feather="user"></span>
                   Akun
                 </a>
@@ -46,42 +46,55 @@
         </nav>
 
         <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
-        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-            <h1 class="h2">Akun Anda</h1>
+          <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+            <h1 class="h2">Edit Tentang Kami</h1>
             <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
                     <li class="breadcrumb-item"><a href="{{ route ('home admin') }}">Home</a></li>
-                    <li class="breadcrumb-item active">Akun Anda</li>
+                    <li class="breadcrumb-item"><a href="{{ route ('tentang_kami') }}">Tentang Kami</a></li>
+                    <li class="breadcrumb-item active">Edit Tentang Kami</li>
                 </ol>
             </div>
           </div>
 
-          @if (session('status'))
-            <div class="alert alert-danger">
-              {{ session('status') }}!
-            </div>
-          @endif
-
+        <!-- Main content -->
+        <section class="content">
         <div class="row">
-            <div class="col-sm-3 col-md-3">
-            @foreach($data as $datauser)
-            <p>Photo:</p>
-            <img src="{!! asset('../img/logo/covid.jpg') !!}" width="250" height="200">
+            <div class="col-12">
+            <div class="card">
+            <div class="card-body">
+            <form action="#" method="post">
+
+            <input type="hidden" name="id" id="id">
+                
+            <div class="form-row">
+            <div class="form-group col-md-6">
+
+                <div class="form-group mb-3">
+                <label for="biodata">Biodata:</label>
+                <input type="text" class="form-control" name="biodata" id="biodata">
+                </div>
+
+                <div class="form-group mb-3">
+                <label for="nilai">Nilai:</label>
+                <input type="number" class="form-control" name="nilai" id="nilai">
+                </div>
+
             </div>
 
-            <div class="col-sm-3 col-md-3">
-            <div class="mb-2">
-                <b>Nama/Username: </b> <span>{{ $datauser->name }}</span>
             </div>
 
-            <div class="mb-3">
-            <b>Email: </b> <span>{{ $datauser->email }}</span>
             </div>
-
-            <a href="/admin/akun/edit_akun/{{ $datauser->id }}" class="btn btn-warning" title="Edit"><span data-feather="edit"></span></a>
-            @endforeach	
+                <div class="modal-footer">
+                <button type="submit" class="btn btn-primary">Edit Data</button>
+            </div>
+            </form>
+            </div>
             </div>
         </div>
+        </div>
+        </section>
+
         </main>
       </div>
     </div>

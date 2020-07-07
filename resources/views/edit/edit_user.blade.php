@@ -46,42 +46,65 @@
         </nav>
 
         <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
-        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-            <h1 class="h2">Akun Anda</h1>
+          <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+            <h1 class="h2">Edit Akun Anda</h1>
             <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
                     <li class="breadcrumb-item"><a href="{{ route ('home admin') }}">Home</a></li>
-                    <li class="breadcrumb-item active">Akun Anda</li>
+                    <li class="breadcrumb-item"><a href="{{ route ('akun') }}">Akun</a></li>
+                    <li class="breadcrumb-item active">Edit Akun Anda</li>
                 </ol>
             </div>
           </div>
 
-          @if (session('status'))
-            <div class="alert alert-danger">
-              {{ session('status') }}!
-            </div>
-          @endif
-
+        <!-- Main content -->
+        <section class="content">
         <div class="row">
-            <div class="col-sm-3 col-md-3">
-            @foreach($data as $datauser)
-            <p>Photo:</p>
-            <img src="{!! asset('../img/logo/covid.jpg') !!}" width="250" height="200">
+            <div class="col-12">
+            <div class="card">
+            <div class="card-body">
+            <form action="#" method="post">
+
+            <input type="hidden" name="id" id="id">
+                
+            <div class="form-row">
+            <div class="form-group col-md-6">
+
+                <div class="form-group mb-3">
+                <label for="nama">Nama:</label>
+                <textarea class="form-control" id="nama" rows="2" name="nama" placeholder="Nama"></textarea>
+                </div>
+
+                <div class="form-group mb-3">
+                <label for="email">Email:</label>
+                <input type="email" class="form-control" name="email" id="email" placeholder="Email">
+                </div>
+
+                <div class="form-group mb-3" style="border: 1px solid rgba(204, 206, 207, 0.8); border-radius:5px; padding:5px">
+                    <label for="gambar">File Gambar</label>
+                    <input type="file" class="form-control-file" name="gambar" id="gambar">
+                </div>
+
+                <div class="form-group mb-3">
+                <label for="password">Password:</label>
+                <input type="email" class="form-control" name="password" id="password" placeholder="Password">
+                </div>
+
             </div>
 
-            <div class="col-sm-3 col-md-3">
-            <div class="mb-2">
-                <b>Nama/Username: </b> <span>{{ $datauser->name }}</span>
             </div>
 
-            <div class="mb-3">
-            <b>Email: </b> <span>{{ $datauser->email }}</span>
             </div>
-
-            <a href="/admin/akun/edit_akun/{{ $datauser->id }}" class="btn btn-warning" title="Edit"><span data-feather="edit"></span></a>
-            @endforeach	
+                <div class="modal-footer">
+                <button type="submit" class="btn btn-primary">Edit Data</button>
+            </div>
+            </form>
+            </div>
             </div>
         </div>
+        </div>
+        </section>
+
         </main>
       </div>
     </div>

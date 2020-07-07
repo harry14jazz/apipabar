@@ -70,9 +70,9 @@
                     </div>
                     @endif
 
-                    <button type="button" class="btn btn-success tombolTambahDataRS" title="Tambah" data-toggle="modal" data-target="#formModal">
+                    <a href="/admin/rs_rujukan/tambah_rs_rujukan" class="btn btn-success tombolTambahDataRS" title="Tambah">
                     <span data-feather="plus-square"></span> Tambah Rumah Sakit Rujukan Covid
-                    </button>
+                    </a>
                     
                 </div>
                 <!-- /.card-header -->
@@ -98,7 +98,7 @@
                   <td>{{ $datars->email }}</td>
                   <td>{{ $datars->lokasi }}</td>
                   <td class="text-center">
-                    <a class="btn btn-warning" href="#" role="button" title="Edit">
+                    <a class="btn btn-warning" href="/admin/rs_rujukan/edit_rs_rujukan/{{ $datars->id }}" role="button" title="Edit">
                     <span data-feather="edit"></span>
                     </a>
                     <a class="btn btn-danger" href="#" role="button" title="Hapus" data-toggle="modal" data-target="#formModalDelete">
@@ -133,5 +133,33 @@
         </main>
       </div>
     </div>
+
+<!-- The Modal -->
+<div class="modal modal-danger fade" id="formModalDelete" role="dialog" aria-labelledby="myModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+                
+    <!-- Modal Header -->
+    <div class="modal-header">
+      <h5 class="modal-title text-center" id="myModal">Hapus Data RS Rujukan</h4>
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span data-feather="x"><span>&times;</span></button>
+    </div>
+        <form action="#" method="post">
+        <!-- Modal body -->
+        <div class="modal-body">
+          <p class="text-center">
+            Apakah Anda Yakin ?
+          </p>
+        </div>
+                  
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-success" data-dismiss="modal">No</button>
+        <input type="submit" class="btn btn-danger" name="submit" value="Yes">
+        </form>
+        </div>
+    </div>
+  </div>
+</div>
 
 @extends ('template.footer')

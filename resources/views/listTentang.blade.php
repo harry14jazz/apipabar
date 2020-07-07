@@ -94,7 +94,7 @@
                   <td>{{ $datatentang->biodata }}</td>
                   <td>{{ $datatentang->nilai }}</td>
                   <td class="text-center">
-                    <a class="btn btn-warning" href="#" role="button" title="Edit">
+                    <a class="btn btn-warning" href="/admin/tentang_kami/edit_tentang_kami/{{ $datatentang->id }}" role="button" title="Edit">
                     <span data-feather="edit"></span>
                     </a>
                     <!-- <a class="btn btn-danger" href="#" role="button" title="Hapus" data-toggle="modal" data-target="#formModalDelete">

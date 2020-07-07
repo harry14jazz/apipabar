@@ -161,9 +161,6 @@ class IntegrationController extends Controller
         $this->getDataODP();
         $this->getDataOTG();
 
-        return response()->json([
-            'Status'    => TRUE,
-            'Message' => 'Data has been updated.'
-        ], 200);
+        return redirect()->back()->with('status', 'Data Berhasil Diupdate');
     }
 }

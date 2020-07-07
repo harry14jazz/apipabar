@@ -65,14 +65,14 @@
                     <h3 class="card-title">Berita Covid</h3>
 
                     @if (session('status'))
-                    <div class="alert alert-danger">
+                    <div class="alert alert-success">
                       {{ session('status') }}!
                     </div>
                     @endif
 
-                    <button type="button" class="btn btn-success tombolTambahDataBerita" title="Tambah" data-toggle="modal" data-target="#formModal">
+                    <a href="/admin/berita/tambah_berita" class="btn btn-success tombolTambahDataBerita" title="Tambah">
                     <span data-feather="plus-square"></span> Tambah Data Berita Covid
-                    </button>
+                    </a>
                     
                 </div>
                 <!-- /.card-header -->
@@ -85,6 +85,7 @@
                   <th>Isi</th>
                   <th>Gambar</th>
                   <th>Sumber</th>
+                  <th>Tanggal Post</th>
                   <th>Aksi</th>
                 </tr>
                 </thead>
@@ -94,11 +95,12 @@
                 <tr>
                   <td><?= $i+1; ?></td>
                   <td>{{ $databerita->judul }}</td>
-                  <td>{{ $databerita->isi }}</td>
+                  <td style="overflow: hidden; white-space: nowrap; text-overflow: ellipsis;">{{ $databerita->isi }}</td>
                   <td><img src="/img/berita/{{ $databerita->gambar }}" alt="/img/berita/{{ $databerita->gambar }}" width="100" height="100"></td>
                   <td>{{ $databerita->sumber }}</td>
+                  <td>{{ $databerita->tanggal_post }}</td>
                   <td class="text-center">
-                    <a class="btn btn-warning" href="#" role="button" title="Edit">
+                    <a class="btn btn-warning" href="/admin/berita/edit_berita/{{ $databerita->id }}" role="button" title="Edit">
                     <span data-feather="edit"></span>
                     </a>
                     <a class="btn btn-danger" href="#" role="button" title="Hapus" data-toggle="modal" data-target="#formModalDelete">
@@ -116,6 +118,7 @@
                   <th>Isi</th>
                   <th>Gambar</th>
                   <th>Sumber</th>
+                  <th>Tanggal Post</th>
                   <th>Aksi</th>
                 </tr>
                 </tfoot>
@@ -133,5 +136,33 @@
         </main>
       </div>
     </div>
+
+<!-- The Modal -->
+<div class="modal modal-danger fade" id="formModalDelete" role="dialog" aria-labelledby="myModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+                
+    <!-- Modal Header -->
+    <div class="modal-header">
+      <h5 class="modal-title text-center" id="myModal">Hapus Data Berita</h4>
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span data-feather="x"><span>&times;</span></button>
+    </div>
+        <form action="#" method="post">
+        <!-- Modal body -->
+        <div class="modal-body">
+          <p class="text-center">
+            Apakah Anda Yakin ?
+          </p>
+        </div>
+                  
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-success" data-dismiss="modal">No</button>
+        <input type="submit" class="btn btn-danger" name="submit" value="Yes">
+        </form>
+        </div>
+    </div>
+  </div>
+</div>
 
 @extends ('template.footer')

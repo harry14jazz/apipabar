@@ -24,7 +24,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="{{ route ('rs_rujukan') }}">
+                <a class="nav-link active" href="{{ route ('rs_rujukan') }}">
                   <span data-feather="plus-square"></span>
                   RS Rujukan
                 </a>
@@ -36,7 +36,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link active" href="{{ route ('akun') }}">
+                <a class="nav-link" href="{{ route ('akun') }}">
                   <span data-feather="user"></span>
                   Akun
                 </a>
@@ -46,42 +46,69 @@
         </nav>
 
         <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
-        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-            <h1 class="h2">Akun Anda</h1>
+          <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+            <h1 class="h2">Edit Rumah Sakit Rujukan</h1>
             <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
                     <li class="breadcrumb-item"><a href="{{ route ('home admin') }}">Home</a></li>
-                    <li class="breadcrumb-item active">Akun Anda</li>
+                    <li class="breadcrumb-item"><a href="{{ route ('rs_rujukan') }}">RS Rujukan</a></li>
+                    <li class="breadcrumb-item active">Edit Rumah Sakit Rujukan</li>
                 </ol>
             </div>
           </div>
 
-          @if (session('status'))
-            <div class="alert alert-danger">
-              {{ session('status') }}!
-            </div>
-          @endif
-
+        <!-- Main content -->
+        <section class="content">
         <div class="row">
-            <div class="col-sm-3 col-md-3">
-            @foreach($data as $datauser)
-            <p>Photo:</p>
-            <img src="{!! asset('../img/logo/covid.jpg') !!}" width="250" height="200">
+            <div class="col-12">
+            <div class="card">
+            <div class="card-body">
+            <form action="#" method="post">
+
+            <input type="hidden" name="id" id="id">
+                
+            <div class="form-row">
+            <div class="form-group col-md-6">
+
+                <div class="form-group mb-3">
+                <label for="nama_rs">Nama RS:</label>
+                <textarea class="form-control" id="nama_rs" rows="2" name="nama_rs" placeholder="Nama RS"></textarea>
+                </div>
+
+                <div class="form-group mb-3">
+                <label for="telp">Telp:</label>
+                <input type="number" class="form-control" name="telp" id="telp">
+                </div>
+
             </div>
 
-            <div class="col-sm-3 col-md-3">
-            <div class="mb-2">
-                <b>Nama/Username: </b> <span>{{ $datauser->name }}</span>
+            <div class="form-group col-md-6">
+
+                <div class="form-group mb-3">
+                <label for="email">Email:</label>
+                <input type="email" class="form-control" name="email" id="email">
+                </div>
+
+                <div class="form-group mb-3">
+                <label for="lokasi">Lokasi:</label>
+                <textarea class="form-control" id="lokasi" rows="2" name="lokasi" placeholder="Lokasi"></textarea>
+                </div>
+
             </div>
 
-            <div class="mb-3">
-            <b>Email: </b> <span>{{ $datauser->email }}</span>
             </div>
 
-            <a href="/admin/akun/edit_akun/{{ $datauser->id }}" class="btn btn-warning" title="Edit"><span data-feather="edit"></span></a>
-            @endforeach	
+            </div>
+                <div class="modal-footer">
+                <button type="submit" class="btn btn-primary">Edit Data</button>
+            </div>
+            </form>
+            </div>
             </div>
         </div>
+        </div>
+        </section>
+
         </main>
       </div>
     </div>

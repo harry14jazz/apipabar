@@ -34,15 +34,21 @@ Route::get('/admin/data_covid','DataCovidController@listDataCovid')->middleware(
 
 //berita
 Route::get('/admin/berita','BeritaController@listBerita')->middleware('auth')->name('berita');
+Route::get('/admin/berita/tambah_berita','BeritaController@tambahBerita')->middleware('auth');
+Route::get('/admin/berita/edit_berita/{id}','BeritaController@editBerita')->middleware('auth');
 
 //rs_rujukan
 Route::get('/admin/rs_rujukan','RumahSakitController@listRS')->middleware('auth')->name('rs_rujukan');
+Route::get('/admin/rs_rujukan/tambah_rs_rujukan','RumahSakitController@tambahRS')->middleware('auth');
+Route::get('/admin/rs_rujukan/edit_rs_rujukan/{id}','RumahSakitController@editRS')->middleware('auth');
 
 //tentang_kami
 Route::get('/admin/tentang_kami','TentangController@listTentang')->middleware('auth')->name('tentang_kami');
+Route::get('/admin/tentang_kami/edit_tentang_kami/{id}','TentangController@editTentang')->middleware('auth');
 
 //akun
 Route::get('/admin/akun','AkunController@index')->middleware('auth')->name('akun');
+Route::get('/admin/akun/edit_akun/{id}','AkunController@editAkun')->middleware('auth');
 
 //API
 Route::get('/view_data', 'DataCovidController@index');

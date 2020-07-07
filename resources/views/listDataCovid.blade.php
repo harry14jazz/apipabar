@@ -65,14 +65,14 @@
                     <h3 class="card-title">Data Covid</h3>
 
                     @if (session('status'))
-                    <div class="alert alert-danger">
+                    <div class="alert alert-success">
                       {{ session('status') }}!
                     </div>
                     @endif
 
-                    <button type="button" class="btn btn-success tombolTambahDataCovid" title="Tambah" data-toggle="modal" data-target="#formModal">
+                    <a href="/sync" class="btn btn-success tombolTambahDataCovid" title="sinkronisasi">
                     <span data-feather="refresh-cw"></span> Singkronisasi Data Covid
-                    </button>
+                    </a>
                     
                 </div>
                 <!-- /.card-header -->

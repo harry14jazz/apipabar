@@ -21,4 +21,13 @@ class BeritaController extends Controller
         $data = Berita::orderBy('id','DESC')->get();
         return view('listBerita',['data' => $data]);
     }
+
+    public function tambahBerita(){
+        return view('tambah/tambah_berita');
+    }
+
+    public function editBerita($id){
+        $data = Berita::find($id);
+        return view('edit/edit_berita', ['data' => $data]);
+    }
 }

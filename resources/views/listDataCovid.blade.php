@@ -64,18 +64,15 @@
                 <div class="card-header">
                     <h3 class="card-title">Data Covid</h3>
 
-                    <!-- <div class="row">
-                    <div class="col-lg-6">
-                        <?php 
-                        if(isset($_SESSION['flash'])){
-                        Flasher::flash();
-                        } ?>
-                    </div>  
-                    </div> -->
+                    @if (session('status'))
+                    <div class="alert alert-danger">
+                      {{ session('status') }}!
+                    </div>
+                    @endif
 
-                    <!-- <button type="button" class="btn btn-success tombolTambahDataCovid" title="Tambah" data-toggle="modal" data-target="#formModal">
-                    <span data-feather="plus-square"></span> Tambah Data Covid
-                    </button> -->
+                    <button type="button" class="btn btn-success tombolTambahDataCovid" title="Tambah" data-toggle="modal" data-target="#formModal">
+                    <span data-feather="refresh-cw"></span> Singkronisasi Data Covid
+                    </button>
                     
                 </div>
                 <!-- /.card-header -->
@@ -86,7 +83,7 @@
                   <th>No</th>
                   <th>Status</th>
                   <th>Total Jumlah</th>
-                  <th>Aksi</th>
+                  <!-- <th>Aksi</th> -->
                 </tr>
                 </thead>
                 <tbody>
@@ -96,14 +93,14 @@
                   <td><?= $i+1; ?></td>
                   <td>{{ $datacovid->status }}</td>
                   <td>{{ $datacovid->total_jumlah }}</td>
-                  <td class="text-center">
+                  <!-- <td class="text-center">
                     <a class="btn btn-warning" href="#" role="button" title="Edit">
                     <span data-feather="edit"></span>
-                    </a>
+                    </a> -->
                     <!-- <a class="btn btn-danger" href="#" role="button" title="Hapus" data-toggle="modal" data-target="#formModalDelete">
                     <span data-feather="trash-2"></span>
                     </a> -->
-                  </td>
+                  <!-- </td> -->
                 </tr>
                 <?php $i++; ?>
                 @endforeach
@@ -113,7 +110,7 @@
                   <th>No</th>
                   <th>Status</th>
                   <th>Total Jumlah</th>
-                  <th>Aksi</th>
+                  <!-- <th>Aksi</th> -->
                 </tr>
                 </tfoot>
               </table>

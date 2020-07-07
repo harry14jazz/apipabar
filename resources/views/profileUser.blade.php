@@ -56,6 +56,12 @@
             </div>
           </div>
 
+          @if (session('status'))
+            <div class="alert alert-danger">
+              {{ session('status') }}!
+            </div>
+          @endif
+
         <div class="row">
             <div class="col-sm-3 col-md-3">
             @foreach($data as $datauser)

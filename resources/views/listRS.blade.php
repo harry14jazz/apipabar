@@ -64,14 +64,11 @@
                 <div class="card-header">
                     <h3 class="card-title">Rumah Sakit Rujukan Covid</h3>
 
-                    <!-- <div class="row">
-                    <div class="col-lg-6">
-                        <?php 
-                        if(isset($_SESSION['flash'])){
-                        Flasher::flash();
-                        } ?>
-                    </div>  
-                    </div> -->
+                    @if (session('status'))
+                    <div class="alert alert-danger">
+                      {{ session('status') }}!
+                    </div>
+                    @endif
 
                     <button type="button" class="btn btn-success tombolTambahDataRS" title="Tambah" data-toggle="modal" data-target="#formModal">
                     <span data-feather="plus-square"></span> Tambah Rumah Sakit Rujukan Covid

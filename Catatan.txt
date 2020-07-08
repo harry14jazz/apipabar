@@ -1,6 +1,6 @@
-Dashboard
-Tambah Required
-Tambah Placeholder
-Tampilkan Logic Edit
-Tambahkan Logic Tambah
-Tambahkan Logic Hapus
+Dashboard = Done
+Tambah Required = Done
+Tambah Placeholder = Done
+Tampilkan Logic Edit = 1/4
+Tambahkan Logic Tambah = 1/4
+Tambahkan Logic Hapus = 1/4

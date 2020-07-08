@@ -48,7 +48,7 @@
         <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
           <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
             <h1 class="h2">Dashboard</h1>
-            <div class="btn-toolbar mb-2 mb-md-0">
+            <!-- <div class="btn-toolbar mb-2 mb-md-0">
               <div class="btn-group mr-2">
                 <button class="btn btn-sm btn-outline-secondary">Share</button>
                 <button class="btn btn-sm btn-outline-secondary">Export</button>
@@ -57,8 +57,13 @@
                 <span data-feather="calendar"></span>
                 This week
               </button>
-            </div>
+            </div> -->
           </div>
+
+          <div class="col-lg-12 col-12 mt-4 mb-4 embed-responsive embed-responsive-4by3 text-center">
+            <iframe src="https://calendar.google.com/calendar/embed?height=600&amp;wkst=2&amp;bgcolor=%234285F4&amp;ctz=Asia%2FJakarta&amp;src=ZW4uaW5kb25lc2lhbiNob2xpZGF5QGdyb3VwLnYuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&amp;color=%230B8043&amp;showTitle=1&amp;showNav=1&amp;showTz=0&amp;hl=id&amp;showCalendars=1&amp;showPrint=0&amp;title=Calendar" style="border:solid 1px #777" width="100%" height="600" frameborder="0" scrolling="no"></iframe>
+          </div>
+
         </main>
       </div>
     </div>

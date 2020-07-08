@@ -72,12 +72,12 @@
 
                 <div class="form-group mb-3">
                 <label for="biodata">Biodata:</label>
-                <input type="text" class="form-control" name="biodata" id="biodata">
+                <input type="text" class="form-control" name="biodata" id="biodata" placeholder="Biodata" required>
                 </div>
 
                 <div class="form-group mb-3">
                 <label for="nilai">Nilai:</label>
-                <input type="number" class="form-control" name="nilai" id="nilai">
+                <input type="text" class="form-control" name="nilai" id="nilai" placeholder="Nilai" required>
                 </div>
 
             </div>

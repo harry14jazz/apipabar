@@ -72,12 +72,12 @@
 
                 <div class="form-group mb-3">
                 <label for="nama_rs">Nama RS:</label>
-                <textarea class="form-control" id="nama_rs" rows="2" name="nama_rs" placeholder="Nama RS"></textarea>
+                <textarea class="form-control" id="nama_rs" rows="2" name="nama_rs" placeholder="Nama RS" required></textarea>
                 </div>
 
                 <div class="form-group mb-3">
                 <label for="telp">Telp:</label>
-                <input type="number" class="form-control" name="telp" id="telp">
+                <input type="number" class="form-control" name="telp" placeholder="Telp" id="telp" required>
                 </div>
 
             </div>
@@ -86,12 +86,12 @@
 
                 <div class="form-group mb-3">
                 <label for="email">Email:</label>
-                <input type="email" class="form-control" name="email" id="email">
+                <input type="email" class="form-control" name="email" id="email" placeholder="Email" required>
                 </div>
 
                 <div class="form-group mb-3">
                 <label for="lokasi">Lokasi:</label>
-                <textarea class="form-control" id="lokasi" rows="2" name="lokasi" placeholder="Lokasi"></textarea>
+                <textarea class="form-control" id="lokasi" rows="2" name="lokasi" placeholder="Lokasi" required></textarea>
                 </div>
 
             </div>

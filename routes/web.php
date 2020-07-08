@@ -35,7 +35,10 @@ Route::get('/admin/data_covid','DataCovidController@listDataCovid')->middleware(
 //berita
 Route::get('/admin/berita','BeritaController@listBerita')->middleware('auth')->name('berita');
 Route::get('/admin/berita/tambah_berita','BeritaController@tambahBerita')->middleware('auth');
+Route::post('/admin/berita/tambah_berita/simpan','BeritaController@tambahBeritaSimpan')->middleware('auth');
 Route::get('/admin/berita/edit_berita/{id}','BeritaController@editBerita')->middleware('auth');
+Route::post('/admin/berita/edit_berita/{id}/simpan','BeritaController@editBeritaSimpan')->middleware('auth');
+Route::delete('/admin/berita/hapus_berita/{id}','BeritaController@hapusBerita')->middleware('auth');
 
 //rs_rujukan
 Route::get('/admin/rs_rujukan','RumahSakitController@listRS')->middleware('auth')->name('rs_rujukan');

@@ -72,17 +72,17 @@
 
                 <div class="form-group mb-3">
                 <label for="nama">Nama:</label>
-                <textarea class="form-control" id="nama" rows="2" name="nama" placeholder="Nama"></textarea>
+                <textarea class="form-control" id="nama" rows="2" name="nama" placeholder="Nama" required></textarea>
                 </div>
 
                 <div class="form-group mb-3">
                 <label for="email">Email:</label>
-                <input type="email" class="form-control" name="email" id="email" placeholder="Email">
+                <input type="email" class="form-control" name="email" id="email" placeholder="Email" required>
                 </div>
 
                 <div class="form-group mb-3" style="border: 1px solid rgba(204, 206, 207, 0.8); border-radius:5px; padding:5px">
                     <label for="gambar">File Gambar</label>
-                    <input type="file" class="form-control-file" name="gambar" id="gambar">
+                    <input type="file" class="form-control-file" name="gambar" id="gambar" required>
                 </div>
 
                 <div class="form-group mb-3">

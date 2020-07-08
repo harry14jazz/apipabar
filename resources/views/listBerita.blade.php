@@ -95,7 +95,7 @@
                 <tr>
                   <td><?= $i+1; ?></td>
                   <td>{{ $databerita->judul }}</td>
-                  <td style="overflow: hidden; white-space: nowrap; text-overflow: ellipsis;">{{ $databerita->isi }}</td>
+                  <td style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px;">{{ $databerita->isi }}</td>
                   <td><img src="/img/berita/{{ $databerita->gambar }}" alt="/img/berita/{{ $databerita->gambar }}" width="100" height="100"></td>
                   <td>{{ $databerita->sumber }}</td>
                   <td>{{ $databerita->tanggal_post }}</td>
@@ -103,9 +103,43 @@
                     <a class="btn btn-warning" href="/admin/berita/edit_berita/{{ $databerita->id }}" role="button" title="Edit">
                     <span data-feather="edit"></span>
                     </a>
-                    <a class="btn btn-danger" href="#" role="button" title="Hapus" data-toggle="modal" data-target="#formModalDelete">
+                    <button type="button" class="btn btn-danger" title="Hapus" data-toggle="modal" data-target="#formModalDelete{{ $databerita->id }}">
+                    <span data-feather="trash-2"></span></button>
+
+                    <!-- <a class="btn btn-danger" href="#" role="button" title="Hapus" data-toggle="modal" data-target="#formModalDelete{{ $databerita->id }}">
                     <span data-feather="trash-2"></span>
-                    </a>
+                    </a> -->
+
+                    <!-- The Modal -->
+                    <div class="modal modal-danger fade" id="formModalDelete{{ $databerita->id }}" role="dialog" aria-labelledby="myModal">
+                      <div class="modal-dialog">
+                        <div class="modal-content">
+                        
+                          <!-- Modal Header -->
+                          <div class="modal-header">
+                            <h4 class="modal-title text-center" id="myModal">Hapus Data Berita</h4>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span data-feather="x"><span>&times;</span></button>
+                          </div>
+                          <form action="/admin/berita/hapus_berita/{{ $databerita->id }}" method="post">
+                          {{ csrf_field() }}
+                          <!-- Modal body -->
+                          <div class="modal-body">
+                            <p class="text-center">
+                                Apakah Anda Yakin ?
+                            </p>
+                            <input type="hidden" name="_method" value="delete">
+                          </div>
+                          
+                          <!-- Modal footer -->
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-success" data-dismiss="modal">No</button>
+                            <input type="submit" class="btn btn-danger" name="submit" value="Yes">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    </form>
+
                   </td>
                 </tr>
                 <?php $i++; ?>
@@ -136,33 +170,5 @@
         </main>
       </div>
     </div>
-
-<!-- The Modal -->
-<div class="modal modal-danger fade" id="formModalDelete" role="dialog" aria-labelledby="myModal">
-  <div class="modal-dialog">
-    <div class="modal-content">
-                
-    <!-- Modal Header -->
-    <div class="modal-header">
-      <h5 class="modal-title text-center" id="myModal">Hapus Data Berita</h4>
-      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span data-feather="x"><span>&times;</span></button>
-    </div>
-        <form action="#" method="post">
-        <!-- Modal body -->
-        <div class="modal-body">
-          <p class="text-center">
-            Apakah Anda Yakin ?
-          </p>
-        </div>
-                  
-        <!-- Modal footer -->
-        <div class="modal-footer">
-          <button type="button" class="btn btn-success" data-dismiss="modal">No</button>
-        <input type="submit" class="btn btn-danger" name="submit" value="Yes">
-        </form>
-        </div>
-    </div>
-  </div>
-</div>
 
 @extends ('template.footer')

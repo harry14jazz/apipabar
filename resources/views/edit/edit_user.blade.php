@@ -63,31 +63,33 @@
             <div class="col-12">
             <div class="card">
             <div class="card-body">
-            <form action="#" method="post">
+            <form action="/admin/akun/edit_akun/{{ $data->id }}/simpan" method="post" enctype="multipart/form-data">
+            {{ csrf_field() }}
 
             <input type="hidden" name="id" id="id">
+            <input type="hidden" name="passwordLama" id="passwordLama" value="{{ $data->password }}">
                 
             <div class="form-row">
             <div class="form-group col-md-6">
 
                 <div class="form-group mb-3">
                 <label for="nama">Nama:</label>
-                <textarea class="form-control" id="nama" rows="2" name="nama" placeholder="Nama" required></textarea>
+                <input type="text" class="form-control" id="nama" name="nama" placeholder="Nama" value="{{ $data->name }}" required>
                 </div>
 
                 <div class="form-group mb-3">
                 <label for="email">Email:</label>
-                <input type="email" class="form-control" name="email" id="email" placeholder="Email" required>
+                <input type="email" class="form-control" name="email" id="email" placeholder="Email" value="{{ $data->email }}" required>
                 </div>
 
-                <div class="form-group mb-3" style="border: 1px solid rgba(204, 206, 207, 0.8); border-radius:5px; padding:5px">
+                <!-- <div class="form-group mb-3" style="border: 1px solid rgba(204, 206, 207, 0.8); border-radius:5px; padding:5px">
                     <label for="gambar">File Gambar</label>
                     <input type="file" class="form-control-file" name="gambar" id="gambar" required>
-                </div>
+                </div> -->
 
                 <div class="form-group mb-3">
                 <label for="password">Password:</label>
-                <input type="email" class="form-control" name="password" id="password" placeholder="Password">
+                <input type="password" class="form-control" name="password" id="password" placeholder="Password">
                 </div>
 
             </div>

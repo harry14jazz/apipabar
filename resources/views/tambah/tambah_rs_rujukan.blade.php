@@ -63,7 +63,8 @@
             <div class="col-12">
             <div class="card">
             <div class="card-body">
-            <form action="#" method="post">
+            <form action="/admin/rs_rujukan/tambah_rs_rujukan/simpan" method="post" enctype="multipart/form-data">
+            {{ csrf_field() }}
 
             <input type="hidden" name="id" id="id">
                 

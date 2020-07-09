@@ -21,4 +21,15 @@ class TentangController extends Controller
         $data = Tentang::find($id);
         return view('edit/edit_tentang',['data' => $data]);
     }
+
+    public function editTentangSimpan(Request $request, $id){
+        $tentang = Tentang::find($id);
+
+        $tentang->biodata = $request->biodata;
+        $tentang->nilai = $request->nilai;
+
+        $tentang->save();
+
+        return redirect()->route('tentang_kami')->with('status', 'Data Berhasil Diedit');
+    }
 }

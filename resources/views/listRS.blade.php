@@ -65,7 +65,7 @@
                     <h3 class="card-title">Rumah Sakit Rujukan Covid</h3>
 
                     @if (session('status'))
-                    <div class="alert alert-danger">
+                    <div class="alert alert-success">
                       {{ session('status') }}!
                     </div>
                     @endif
@@ -101,9 +101,41 @@
                     <a class="btn btn-warning" href="/admin/rs_rujukan/edit_rs_rujukan/{{ $datars->id }}" role="button" title="Edit">
                     <span data-feather="edit"></span>
                     </a>
-                    <a class="btn btn-danger" href="#" role="button" title="Hapus" data-toggle="modal" data-target="#formModalDelete">
-                    <span data-feather="trash-2"></span>
-                    </a>
+                    <!-- <a class="btn btn-danger" href="#" role="button" title="Hapus" data-toggle="modal" data-target="#formModalDelete">
+                    <span data-feather="trash-2"></span> </a> -->
+                    <button type="button" class="btn btn-danger" title="Hapus" data-toggle="modal" data-target="#formModalDelete{{ $datars->id }}">
+                    <span data-feather="trash-2"></span></button>
+                    
+                    <!-- The Modal -->
+                    <div class="modal modal-danger fade" id="formModalDelete{{ $datars->id }}" role="dialog" aria-labelledby="myModal">
+                      <div class="modal-dialog">
+                        <div class="modal-content">
+                        
+                          <!-- Modal Header -->
+                          <div class="modal-header">
+                            <h4 class="modal-title text-center" id="myModal">Hapus Data Berita</h4>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span data-feather="x"><span>&times;</span></button>
+                          </div>
+                          <form action="/admin/rs_rujukan/hapus_rs_rujukan/{{ $datars->id }}" method="post">
+                          {{ csrf_field() }}
+                          <!-- Modal body -->
+                          <div class="modal-body">
+                            <p class="text-center">
+                                Apakah Anda Yakin ?
+                            </p>
+                            <input type="hidden" name="_method" value="delete">
+                          </div>
+                          
+                          <!-- Modal footer -->
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-success" data-dismiss="modal">No</button>
+                            <input type="submit" class="btn btn-danger" name="submit" value="Yes">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    </form>
+
                   </td>
                 </tr>
                 <?php $i++; ?>

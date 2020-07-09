@@ -65,7 +65,7 @@
                     <h3 class="card-title">Tentang Kami</h3>
 
                     @if (session('status'))
-                    <div class="alert alert-danger">
+                    <div class="alert alert-success">
                       {{ session('status') }}!
                     </div>
                     @endif

@@ -63,7 +63,8 @@
             <div class="col-12">
             <div class="card">
             <div class="card-body">
-            <form action="#" method="post">
+            <form action="/admin/rs_rujukan/edit_rs_rujukan/{{ $data->id }}/simpan" method="post" enctype="multipart/form-data">
+            {{ csrf_field() }}
 
             <input type="hidden" name="id" id="id">
                 
@@ -72,12 +73,12 @@
 
                 <div class="form-group mb-3">
                 <label for="nama_rs">Nama RS:</label>
-                <textarea class="form-control" id="nama_rs" rows="2" name="nama_rs" placeholder="Nama RS" required></textarea>
+                <textarea class="form-control" id="nama_rs" rows="2" name="nama_rs" placeholder="Nama RS" required>{{ $data->nama_rs }}</textarea>
                 </div>
 
                 <div class="form-group mb-3">
                 <label for="telp">Telp:</label>
-                <input type="number" class="form-control" name="telp" placeholder="Telp" id="telp" required>
+                <input type="number" class="form-control" name="telp" placeholder="Telp" id="telp" value="{{ $data->telp }}" required>
                 </div>
 
             </div>
@@ -86,12 +87,12 @@
 
                 <div class="form-group mb-3">
                 <label for="email">Email:</label>
-                <input type="email" class="form-control" name="email" id="email" placeholder="Email" required>
+                <input type="email" class="form-control" name="email" id="email" placeholder="Email" value="{{ $data->email }}" required>
                 </div>
 
                 <div class="form-group mb-3">
                 <label for="lokasi">Lokasi:</label>
-                <textarea class="form-control" id="lokasi" rows="2" name="lokasi" placeholder="Lokasi" required></textarea>
+                <textarea class="form-control" id="lokasi" rows="2" name="lokasi" placeholder="Lokasi" required>{{ $data->lokasi }}</textarea>
                 </div>
 
             </div>

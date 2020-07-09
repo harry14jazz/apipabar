@@ -63,7 +63,8 @@
             <div class="col-12">
             <div class="card">
             <div class="card-body">
-            <form action="#" method="post">
+            <form action="/admin/tentang_kami/edit_tentang_kami/{{ $data->id }}/simpan" method="post" enctype="multipart/form-data">
+            {{ csrf_field() }}
 
             <input type="hidden" name="id" id="id">
                 
@@ -72,12 +73,12 @@
 
                 <div class="form-group mb-3">
                 <label for="biodata">Biodata:</label>
-                <input type="text" class="form-control" name="biodata" id="biodata" placeholder="Biodata" required>
+                <input type="text" class="form-control" name="biodata" id="biodata" placeholder="Biodata" value="{{ $data->biodata }}" required>
                 </div>
 
                 <div class="form-group mb-3">
                 <label for="nilai">Nilai:</label>
-                <input type="text" class="form-control" name="nilai" id="nilai" placeholder="Nilai" required>
+                <input type="text" class="form-control" name="nilai" id="nilai" placeholder="Nilai" value="{{ $data->nilai }}" required>
                 </div>
 
             </div>

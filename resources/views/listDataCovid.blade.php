@@ -83,6 +83,7 @@
                   <th>No</th>
                   <th>Status</th>
                   <th>Total Jumlah</th>
+                  <th>Tanggal Update</th>
                   <!-- <th>Aksi</th> -->
                 </tr>
                 </thead>
@@ -93,6 +94,7 @@
                   <td><?= $i+1; ?></td>
                   <td>{{ $datacovid->status }}</td>
                   <td>{{ $datacovid->total_jumlah }}</td>
+                  <td>{{ $datacovid->tanggal_update }}</td>
                   <!-- <td class="text-center">
                     <a class="btn btn-warning" href="#" role="button" title="Edit">
                     <span data-feather="edit"></span>
@@ -110,6 +112,7 @@
                   <th>No</th>
                   <th>Status</th>
                   <th>Total Jumlah</th>
+                  <th>Tanggal Update</th>
                   <!-- <th>Aksi</th> -->
                 </tr>
                 </tfoot>

@@ -23,7 +23,7 @@ class AuthController extends Controller
             return redirect()->route('home admin');
     	}
 
-        return redirect()->back()->with('status', 'Wrong Username or Password');
+        return redirect()->back()->with('status', 'Username/Password Salah');
     }
 
     public function logout(){

@@ -75,7 +75,7 @@ class IntegrationController extends Controller
     public function getDataMeninggal(){
         $today = date("j F Y");
         $client = new Client();
-        $request = $client->request('GET', 'https://services9.arcgis.com/LhpByrI4ziv5pBfe/arcgis/rest/services/aggregat_b_view_layer/FeatureServer/0/query?f=json&where=(Sub_Status%3D%27PDP%27%20OR%20Sub_Status%3D%27ODP%27%20OR%20Sub_Status%3D%27OTG%27)&returnGeometry=false&spatialRel=esriSpatialRelIntersects&outFields=*&outStatistics=%5B%7B%22statisticType%22%3A%22sum%22%2C%22onStatisticField%22%3A%22Jumlah%22%2C%22outStatisticFieldName%22%3A%22value%22%7D%5D&resultType=standard&cacheHint=true');
+        $request = $client->request('GET', 'https://services9.arcgis.com/LhpByrI4ziv5pBfe/arcgis/rest/services/aggregat_b_view_layer/FeatureServer/0/query?f=json&where=Sub_Status%3D%27Positif%27&returnGeometry=false&spatialRel=esriSpatialRelIntersects&outFields=*&outStatistics=%5B%7B%22statisticType%22%3A%22sum%22%2C%22onStatisticField%22%3A%22Jumlah%22%2C%22outStatisticFieldName%22%3A%22value%22%7D%5D&resultType=standard&cacheHint=true');
 
         $response = $request->getBody()->getContents();
         $result = json_decode($response);

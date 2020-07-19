@@ -73,12 +73,12 @@
 
                 <div class="form-group mb-3">
                 <label for="nama_rs">Nama RS:</label>
-                <textarea class="form-control" id="nama_rs" rows="2" name="nama_rs" placeholder="Nama RS" required></textarea>
+                <textarea class="form-control" id="nama_rs" rows="2" name="nama_rs" placeholder="Nama RS" required>{{ old('nama_rs') }}</textarea>
                 </div>
 
                 <div class="form-group mb-3">
                 <label for="telp">Telp:</label>
-                <input type="number" class="form-control" name="telp" id="telp" placeholder="Telp" required>
+                <input type="number" class="form-control" name="telp" id="telp" placeholder="Telp" value="{{ old('telp') }}" required>
                 </div>
 
             </div>
@@ -87,12 +87,12 @@
 
                 <div class="form-group mb-3">
                 <label for="email">Email:</label>
-                <input type="email" class="form-control" name="email" id="email" placeholder="Email" required>
+                <input type="email" class="form-control" name="email" id="email" placeholder="Email" value="{{ old('email') }}" required>
                 </div>
 
                 <div class="form-group mb-3">
                 <label for="lokasi">Lokasi:</label>
-                <textarea class="form-control" id="lokasi" rows="2" name="lokasi" placeholder="Lokasi" required></textarea>
+                <textarea class="form-control" id="lokasi" rows="2" name="lokasi" placeholder="Lokasi" value="{{ old('lokasi') }}" required></textarea>
                 </div>
 
             </div>

@@ -89,6 +89,9 @@
                     <label for="gambar">File Gambar <i style="color:green;">( {{ $data->gambar }} )</i> </label>
                     <input type="file" class="form-control" name="gambar" id="gambar" value="{{ $data->gambar }}">
                 </div>
+                @if($errors->has('gambar'))
+                  <strong class="text-danger">File Yang Anda Upload Bukan Gambar/Foto</strong>
+                @endif
 
                 <div class="form-group mb-3">
                     <label for="sumber">Sumber:</label>

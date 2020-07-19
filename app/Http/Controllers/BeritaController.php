@@ -27,6 +27,10 @@ class BeritaController extends Controller
     }
 
     public function tambahBeritaSimpan(Request $request){
+        $this->validate($request,[
+            'gambar' => 'image|mimes:jpeg,png,jpg',
+        ]);
+
         $berita = new Berita;
         
         $berita->judul = $request->judul;
@@ -52,6 +56,10 @@ class BeritaController extends Controller
     }
 
     public function editBeritaSimpan(Request $request, $id){
+        $this->validate($request,[
+            'gambar' => 'image|mimes:jpeg,png,jpg',
+        ]);
+        
         $berita = Berita::find($id);
 
         $berita->judul = $request->judul;

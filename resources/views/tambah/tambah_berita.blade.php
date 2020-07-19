@@ -73,12 +73,12 @@
 
                 <div class="form-group mb-3">
                 <label for="judul">Judul:</label>
-                <textarea class="form-control" id="judul" rows="2" name="judul" placeholder="Judul" required></textarea>
+                <textarea class="form-control" id="judul" rows="2" name="judul" placeholder="Judul" required>{{ old('judul') }}</textarea>
                 </div>
 
                 <div class="form-group mb-3">
                 <label for="isi">Isi:</label>
-                <textarea class="form-control" id="isi" rows="14" name="isi" placeholder="Isi" required></textarea>
+                <textarea class="form-control" id="isi" rows="14" name="isi" placeholder="Isi" required>{{ old('isi') }}</textarea>
                 </div>
 
             </div>
@@ -89,15 +89,18 @@
                     <label for="gambar">File Gambar</label>
                     <input type="file" class="form-control-file" name="gambar" id="gambar" required>
                 </div>
+                @if($errors->has('gambar'))
+                  <strong class="text-danger">File Yang Anda Upload Bukan Gambar/Foto</strong>
+                @endif
 
                 <div class="form-group mb-3">
                     <label for="sumber">Sumber:</label>
-                    <input type="text" class="form-control" id="sumber" name="sumber" placeholder="Sumber" required>
+                    <input type="text" class="form-control" id="sumber" name="sumber" placeholder="Sumber" value="{{ old('sumber') }}" required>
                 </div>
 
                 <div class="form-group mb-3">
                     <label for="tanggal_post">Tanggal Post:</label>
-                    <input type="date" class="form-control" name="tanggal_post" id="tanggal_post" style="border: 1px solid rgba(204, 206, 207, 0.8); border-radius:5px; padding:6px" required>
+                    <input type="date" class="form-control" name="tanggal_post" id="tanggal_post" style="border: 1px solid rgba(204, 206, 207, 0.8); border-radius:5px; padding:6px" value="{{ old('tanggal_post') }}" required>
                 </div>
 
             </div>

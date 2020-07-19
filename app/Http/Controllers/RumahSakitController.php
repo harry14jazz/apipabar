@@ -41,7 +41,7 @@ class RumahSakitController extends Controller
     }
 
     public function editRSSimpan(Request $request, $id){
-        $rs = new RumahSakit;
+        $rs = RumahSakit::find($id);
         
         $rs->nama_rs = $request->nama_rs;
         $rs->telp = $request->telp;

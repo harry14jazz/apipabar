@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 use App\Berita;
 
 class BeritaController extends Controller
@@ -36,10 +37,12 @@ class BeritaController extends Controller
         $berita->judul = $request->judul;
         $berita->isi = $request->isi;
 
+        $string = Str::random(5);
+
         if($request->hasFile('gambar')){
             $file = $request->file('gambar');
-            $file->move(public_path().'/img/berita', $request->judul.$file->getClientOriginalName());
-            $berita->gambar = $request->judul.$file->getClientOriginalName();
+            $file->move(public_path().'/img/berita', $string.$file->getClientOriginalName());
+            $berita->gambar = $string.$file->getClientOriginalName();
         }
 
         $berita->sumber = $request->sumber;
@@ -65,10 +68,12 @@ class BeritaController extends Controller
         $berita->judul = $request->judul;
         $berita->isi = $request->isi;
 
+        $string = Str::random(5);
+
         if($request->hasFile('gambar')){
             $file = $request->file('gambar');
-            $file->move(public_path().'/img/berita', $request->judul.$file->getClientOriginalName());
-            $berita->gambar = $request->judul.$file->getClientOriginalName();
+            $file->move(public_path().'/img/berita', $string.$file->getClientOriginalName());
+            $berita->gambar = $string.$file->getClientOriginalName();
         }
 
         $berita->sumber = $request->sumber;
